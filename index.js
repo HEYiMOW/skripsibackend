@@ -13,7 +13,7 @@ const { getAllNews } = require('./controllers/NewsControllers')
 
 const { tambahData } = require('./controllers/NewsControllers')
 
-//const db = require('./config/db.local.config'); //Connect to database local
+// const db = require('./config/db.local.config'); //Connect to database local
 const db = require('./config/db.config'); //Connect to database railway
 
 // // yang membantu proses upload file

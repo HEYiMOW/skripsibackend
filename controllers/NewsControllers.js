@@ -1,9 +1,9 @@
-const { coffee2s } = require("../models");
+const { coffee2 } = require("../models");
 const {upload} = require("../middleware/uploader")
 const {imagekit} = require('../lib/imagekit');
 exports.getAllNews = async (req, res) => {
   try {
-    const listnews = await coffee2s.findAll({
+    const listnews = await coffee2.findAll({
       attributes: [
         "id",
         "coffeeshop_name",

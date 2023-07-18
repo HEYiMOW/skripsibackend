@@ -1,12 +1,12 @@
 'use strict';
 
 
-const {Model} = require('sequelize');
+const { DataTypes, Model} = require('sequelize');
 
 const sequelize = require('../config/db.config'); // connect to database railway
-//const sequelize = require('../config/db.local.config'); // connect to database local
+// const sequelize = require('../config/db.local.config'); // connect to database local
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = () => {
   class coffee2 extends Model {
     /**
      * Helper method for defining associations.
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     img: DataTypes.TEXT,
   }, {
     sequelize,
-    modelName: 'coffee2s',
+    modelName: 'coffee2',
   });
   return coffee2;
 };

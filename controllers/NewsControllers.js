@@ -27,7 +27,7 @@ exports.tambahData =  async (req, res) => {
   const {coffeeshop_name, desc, address, image} = req.body
   
   try {
-    let listcoffee = await coffee2s.create({
+    let listcoffee = await coffee2.create({
       coffeeshop_name:coffeeshop_name,
       desc:desc,
       address:address,

@@ -25,46 +25,9 @@ app.post(prefix + 'add', tambahData);
 
 //app.get(prefix + 'bimbel/:kecamatan', getBimbelByKecamatan);
 
-// //db.authenticate()
-//   //.then(() => console.log('Database connected'))
-//   //.catch((err) => console.log('error'));
-
-//   app.post(prefix +'coffee/add', upload.single('image'), async (req, res) => {
-//     // request body => req.body.name
-//     const {coffeeshop_name, desc, address} = req.body
-//   const file = req.file
-
-//   console.log(file)
-
-//   // untuk dapat extension file  
-//   // image.jpg => jpg itu extension nya
-//   const split = file.originalname.split('.');
-//   const ext = split[split.length - 1];
-
-//   // proses upload file ke imagekit
-//   const img = await imagekit.upload({
-//       file: file.buffer,
-//       fileName: `IMG-${Date.now()}.${ext}`
-//   })
-
-  
-//   try {
-//     let listcoffee = await coffee2s.create({
-//       coffeeshop_name:coffeeshop_name,
-//       desc:desc,
-//       address:address,
-//       img:img.url,
-//     })
-    
-//     res.status(200).json({
-//       success: true,
-//       message: "Add Succesfully",
-      
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// })
+db.authenticate()
+.then(() => console.log('Database connected'))
+.catch((err) => console.log('error'));
 
 app.get('/', (req, res) => {
     res.send('Ok');

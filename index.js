@@ -9,9 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-const { getAllNews } = require('./controllers/NewsControllers')
-
-const { tambahData } = require('./controllers/NewsControllers')
+const { getAllNews, tambahData } = require('./controllers/NewsControllers')
 
 //const db = require('./config/db.local.config'); //Connect to database local
 const db = require('./config/db.config'); //Connect to database railway
@@ -23,7 +21,7 @@ const db = require('./config/db.config'); //Connect to database railway
 
 const prefix = '/v1/api/';
 app.get(prefix + 'news', getAllNews);
-app.post(prefix + 'coffee/add', tambahData);
+app.post(prefix + 'add', tambahData);
 
 //app.get(prefix + 'bimbel/:kecamatan', getBimbelByKecamatan);
 

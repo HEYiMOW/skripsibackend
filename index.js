@@ -13,12 +13,12 @@ const { getAllNews } = require('./controllers/NewsControllers')
 
 const { tambahData } = require('./controllers/NewsControllers')
 
-// const db = require('./config/db.local.config'); //Connect to database local
+//const db = require('./config/db.local.config'); //Connect to database local
 const db = require('./config/db.config'); //Connect to database railway
 
 // // yang membantu proses upload file
-const imagekit = require('./lib/imagekit');
-const upload = require('./middleware/uploader');
+//const imagekit = require('./lib/imagekit');
+//const upload = require('./middleware/uploader');
 
 
 const prefix = '/v1/api/';
@@ -38,7 +38,7 @@ app.post(prefix + 'coffee/add', tambahData);
 
 //   console.log(file)
 
-//   // untuk dapat extension file
+//   // untuk dapat extension file  
 //   // image.jpg => jpg itu extension nya
 //   const split = file.originalname.split('.');
 //   const ext = split[split.length - 1];

@@ -1,6 +1,5 @@
 const { coffee2 } = require("../models");
-const {upload} = require("../middleware/uploader")
-const {imagekit} = require('../lib/imagekit');
+
 exports.getAllNews = async (req, res) => {
   try {
     const listnews = await coffee2.findAll({
@@ -23,7 +22,7 @@ exports.getAllNews = async (req, res) => {
 };
 
 exports.tambahData =  async (req, res) => {
-
+  
   const {coffeeshop_name, desc, address, image} = req.body
   
   try {
@@ -34,6 +33,7 @@ exports.tambahData =  async (req, res) => {
       img:image,
     })
     
+    listcoffee = JSON.parse(JSON.stringify(listcoffee))
     res.status(200).json({
       success: true,
       message: "Add Succesfully",

@@ -1,3 +1,3 @@
-GET https://ownvnssa-production.up.railway.app/v1/api/news
+GET https://skripsibackend-production.up.railway.app/v1/api/news
 
-POST https://ownvnssa-production.up.railway.app/v1/api/add
+POST https://skripsibackend-production.up.railway.app/v1/api/add

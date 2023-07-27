@@ -11,19 +11,17 @@ app.use(cors());
 
 const { getAllNews, tambahData } = require('./controllers/NewsControllers')
 
+const { Login } = require('./controllers/UserController')
 //const db = require('./config/db.local.config'); //Connect to database local
 const db = require('./config/db.config'); //Connect to database railway
-
-// // yang membantu proses upload file
-//const imagekit = require('./lib/imagekit');
-//const upload = require('./middleware/uploader');
-
 
 const prefix = '/v1/api/';
 app.get(prefix + 'news', getAllNews);
 app.post(prefix + 'add', tambahData);
 
 //app.get(prefix + 'bimbel/:kecamatan', getBimbelByKecamatan);
+
+app.post(prefix+ 'login', Login)
 
 db.authenticate()
 .then(() => console.log('Database connected'))

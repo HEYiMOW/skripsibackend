@@ -1,3 +1,4 @@
+const { where } = require("sequelize");
 const { coffee2 } = require("../models");
 
 exports.getAllNews = async (req, res) => {
@@ -10,6 +11,31 @@ exports.getAllNews = async (req, res) => {
         "address",
         "img",
       ],
+    });
+    res.status(200).json({
+      success: true,
+      message: "List All News",
+      data: listnews,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.getNewsById = async (req, res) => {
+  try {
+    const { newsId } = req.params
+    const listnews = await coffee2.findAll({
+      attributes: [
+        "id",
+        "coffeeshop_name",
+        "desc",
+        "address",
+        "img",
+      ],
+      where: {
+        id: newsId,
+      }
     });
     res.status(200).json({
       success: true,
